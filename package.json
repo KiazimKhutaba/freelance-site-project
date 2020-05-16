@@ -1,0 +1,25 @@
+{
+  "name": "build-site-frontend",
+  "version": "1.0.0",
+  "description": "Simple site fronted autobuild tool",
+  "main": "",
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-nunjucks": "^5.0.1",
+    "gulp-pretty-html": "^2.0.10",
+    "gulp-remove-empty-lines": "^0.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "live-server": "^1.2.1",
+    "node-sass": "^4.14.1"
+  },
+  "scripts": {
+    "watch": "gulp buildOnChange",
+    "dev-server": "./node_modules/.bin/live-server --port=5555 --host=0.0.0.0  --wait=500 dist"
+  },
+  "keywords": ["fronted", "site"],
+  "author": "Kiazim Khutaba",
+  "license": "ISC"
+}
