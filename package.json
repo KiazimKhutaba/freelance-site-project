@@ -1,7 +1,7 @@
 {
   "name": "build-site-frontend",
   "version": "1.0.0",
-  "description": "Simple site fronted autobuild tool",
+  "description": "Simple site fronted auto build tool",
   "main": "",
   "dependencies": {},
   "devDependencies": {
