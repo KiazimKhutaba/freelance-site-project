@@ -1,4 +1,4 @@
-### Site frontend autobuild tool
+### Site frontend auto build tool
 
 This project aimed to make simpler and faster build of site fronted.
 
@@ -15,10 +15,22 @@ This project aimed to make simpler and faster build of site fronted.
 
 npm install
 
+```
+#### Run file watcher
+
+```bash
+
 npm run watch # runs gulp watch task
+
+```
+
+#### Run live reload server
+
+```bash
 
 npm run dev-server # run local server on port 5555 
 
 ```
 
+**Note: in VS Code you should setup settings for Nunjucks templates, like html templates** 
 
