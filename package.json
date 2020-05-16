@@ -19,7 +19,10 @@
     "watch": "gulp buildOnChange",
     "dev-server": "./node_modules/.bin/live-server --port=5555 --host=0.0.0.0  --wait=500 dist"
   },
-  "keywords": ["fronted", "site"],
+  "keywords": [
+    "fronted",
+    "site"
+  ],
   "author": "Kiazim Khutaba",
   "license": "ISC"
 }
