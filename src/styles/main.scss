@@ -1,0 +1,40 @@
+
+$maxWidth: 1320;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: black;
+  color: #fff;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $maxWidth + px;
+  border: 1px solid red;
+  height: 100%;
+}
+
+input[type="button"] {
+  cursor: pointer;
+  background-color: #ddd;
+  pointer-events: none;
+  padding: 10px 25px;
+  font-size: 1rem;
+}
+
+#acceptRules:checked ~ input[type="button"] {
+  border: 3px dashed #00ff00;
+  pointer-events: initial;
+}

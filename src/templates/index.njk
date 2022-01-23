@@ -4,10 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Main{% endblock %}</title>
-    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="styles/main.css">
     <script src="js/main.js"></script>
 </head>
 <body>
-    <div class="container"></div>
+    <div class="container">
+        {% block page_content %} Page content {% endblock %}
+
+        {# <div>
+            <label for="acceptRules">Accept rules</label>
+            <input type="checkbox" name="accept_rules" id="acceptRules" />
+            <hr />
+            <input type="button" value="Next" onclick="alert(this.value)" />
+        </div> #}
+
+        <nav>
+            <ul>
+                <li><a href="#" class="manu__link">Menu 10</a></li>
+                <li><a href="#" class="manu__link">Menu 20</a></li>
+                <li><a href="#" class="manu__link">Menu 3</a></li>
+            </ul>
+        </nav>
+    </div>
 </body>
 </html>
