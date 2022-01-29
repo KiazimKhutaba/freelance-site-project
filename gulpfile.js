@@ -11,6 +11,7 @@ const removeEmptyLines = require('gulp-remove-empty-lines');
 // config
 const TEMPLATE_PATHS = [
     './src/templates/**/*.njk',
+    '!./src/templates/base/**/*',
     '!./src/templates/parts/**/*',
     '!./src/templates/macro/**/*'
 ];
@@ -49,10 +50,26 @@ const scripts = () => (
 );
 
 
+const copyImages = () => (
+    src(['./src/images/**/*.{gif,jpg,png,svg}'])
+        .pipe(dest('dist/images'))
+);
+
+const copyIcons = () => {
+    src(['./src/icons/*']).pipe(dest('dist'))
+}
+
+
 const clean = () => del(['dist/*'])
 
 
-const allTasks = () => (template(), styles(), scripts())
+const allTasks = () => (
+    copyIcons(),
+    copyImages(),
+    template(),
+    styles(),
+    scripts()
+)
 
 
 const devServer = () => {
@@ -69,9 +86,7 @@ const devServer = () => {
     watch('src/**/*').on('all', (path, file) => {
         console.log('Rebuild running...');
 
-        template();
-        styles();
-        scripts();
+        allTasks();
 
         console.log('Rebuild completed.');
     })
@@ -80,6 +95,7 @@ const devServer = () => {
 exports.default = allTasks;
 
 
+exports.copyImages = copyImages;
 exports.devServer = devServer;
 exports.build = template;
 exports.sass  = styles;
