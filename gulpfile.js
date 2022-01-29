@@ -6,6 +6,7 @@ const del = require('del');
 const liveServer = require('live-server');
 const sass = require('gulp-sass')(require('sass'));
 const removeEmptyLines = require('gulp-remove-empty-lines');
+const autoprefixer = require('gulp-autoprefixer');
 
 
 // config
@@ -40,6 +41,7 @@ const template = () => {
 const styles = () => (
     src(STYLE_PATHS)
         .pipe(sass().on('error', sass.logError))
+        //.pipe(autoprefixer(['last 2 versions']))
         .pipe(dest('./dist/styles'))
 );
 
@@ -76,7 +78,7 @@ const devServer = () => {
 
     liveServer.start({
         host: '0.0.0.0',
-        port: 5555,
+        port: 3030,
         wait: 500,
         root: 'dist'
     });

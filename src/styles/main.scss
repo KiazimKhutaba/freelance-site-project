@@ -70,17 +70,16 @@ body {
   background-color: $mainBackgroundColor;
 
   .box--left {
-    background: #f2f6fc url(https://www.akmeservices.ru/wp-content/uploads/2021/05/01.png);
+    //background-color: #f2f6fc;
+    //background-image: url(../images/misha.png);
+    background-image: url(images/misha.png);
     background-repeat: no-repeat;
     background-position: -120% bottom;
     background-size: 550px;
   }
 
   .box--right {
-    width: 635px;
-    height: 618px;
-    border-radius: 16px;
-    background: #f2f6fc url(https://www.akmeservices.ru/wp-content/uploads/2021/06/nastya-1.png) no-repeat 210% bottom;
+    background: #f2f6fc url(images/nastya.png) no-repeat 210% bottom;
     background-size: 540px;
   }
 }

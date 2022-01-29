@@ -6,6 +6,7 @@
   "devDependencies": {
     "del": "^5.1.0",
     "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-nunjucks": "^5.0.1",
     "gulp-pretty-html": "^2.0.10",
     "gulp-remove-empty-lines": "^0.1.0",
