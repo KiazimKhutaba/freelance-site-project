@@ -1,4 +1,5 @@
-$mainBackgroundColor: #f2f6fc;
+$mainBackgroundColor: #788bac;
+// $mainBackgroundColor: #f2f6fc;
 $primaryBorderRadius: 16px;
 $secondaryBorderRadius: 8px;
 $debugBorder: 1px solid rgb(214, 27, 27);
@@ -16,10 +17,13 @@ body {
 
 .wrapper {
   max-width: 1310px;
-  width: 1310px;
   display: block;
   position: relative;
   margin: 30px auto;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 }
 
 .header {
@@ -33,6 +37,14 @@ body {
   height: 108px;
   margin-bottom: 44px;
   border-radius: $primaryBorderRadius;
+
+
+  @media (max-width: 768px) {
+    padding-left: 10px;
+    padding-right: 10px;
+    flex-direction: column;
+    font-size: .5em;
+  }
 }
 
 .header__logo {
@@ -41,11 +53,11 @@ body {
 }
 
 .page__title {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 500;
   line-height: 33px;
-  letter-spacing: 0em;
+  letter-spacing: 0;
   text-align: left;
 }
 
@@ -57,30 +69,34 @@ body {
   align-items: center;
   //border: $debugBorder;
 
-  @media (max-width: 736px) {
-    display: block;
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 }
 
 .box {
   border-radius: $primaryBorderRadius;
   width: 635px;
-  height: 618px;
+  min-height: 618px;
   position: relative;
+  background-repeat: no-repeat;
+  background-size: 550px;
   background-color: $mainBackgroundColor;
 
-  .box--left {
-    //background-color: #f2f6fc;
-    //background-image: url(../images/misha.png);
-    background-image: url(images/misha.png);
-    background-repeat: no-repeat;
+  &--left {
+    //margin-right: 20px;
+    background-image: url(../images/misha.png);
     background-position: -120% bottom;
-    background-size: 550px;
   }
 
-  .box--right {
-    background: #f2f6fc url(images/nastya.png) no-repeat 210% bottom;
-    background-size: 540px;
+  &--right {
+    background-image: url(../images/nastya.png);
+    background-position: 210% bottom;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
 
@@ -157,8 +173,6 @@ body {
     color: #fff;
   }
 }
-
-
 
 
 .button-link:hover {

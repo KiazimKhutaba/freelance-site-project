@@ -1,0 +1,59 @@
+{% extends 'base/main_base.njk' %}
+
+{% set crumbs = [
+    { href: 'about.html', caption: 'О нас' }
+] %}
+
+{% block title %} Компания БХТ | О нас {% endblock %}
+
+{% block content %}
+
+{% from 'macro/breadcrumb_macro.njk' import breadcrumb %}
+
+{{ breadcrumb(crumbs) }}
+
+<section class="p-4" style="line-height: 1.8rem">
+    <div class="container">
+        <h2 class="mb-4">О компании</h2>
+        <h4>О нас</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aut, autem commodi, earum, esse
+            eveniet explicabo facilis harum inventore minima modi nemo voluptates? Ab blanditiis culpa deleniti,
+            dolore dolorem eligendi et fugiat illo illum in, ipsam ipsum laboriosam laborum natus nesciunt nobis
+            numquam porro praesentium quaerat quas quis quisquam rerum soluta, sunt veritatis. Ea fugit, molestiae?
+            Ab adipisci, aliquam aperiam atque commodi consectetur deserunt facere laborum laudantium molestias
+            nemo omnis pariatur perspiciatis quas quibusdam sequi suscipit tempore vero voluptas voluptatum.
+            Ab ad asperiores blanditiis exercitationem ipsa ipsum, maiores minus nulla officiis optio quia,
+            quibusdam quis temporibus, vero voluptas. Aut?
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aut, autem commodi, earum, esse
+            eveniet explicabo facilis harum inventore minima modi nemo voluptates? Ab blanditiis culpa deleniti,
+            dolore dolorem eligendi et fugiat illo illum in, ipsam ipsum laboriosam laborum natus nesciunt nobis
+            numquam porro praesentium quaerat quas quis quisquam rerum soluta, sunt veritatis. Ea fugit, molestiae?
+            Ab adipisci, aliquam aperiam atque commodi consectetur deserunt facere laborum laudantium molestias
+            nemo omnis pariatur perspiciatis quas quibusdam sequi suscipit tempore vero voluptas voluptatum.
+            Ab ad asperiores blanditiis exercitationem ipsa ipsum, maiores minus nulla officiis optio quia,
+            quibusdam quis temporibus, vero voluptas. Aut?
+        </p>
+        <h4>Кто мы</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aut, autem commodi, earum, esse
+            eveniet explicabo facilis harum inventore minima modi nemo voluptates? Ab blanditiis culpa deleniti,
+            dolore dolorem eligendi et fugiat illo illum in, ipsam ipsum laboriosam laborum natus nesciunt nobis
+            numquam porro praesentium quaerat quas quis quisquam rerum soluta, sunt veritatis. Ea fugit, molestiae?
+            Ab adipisci, aliquam aperiam atque commodi consectetur deserunt facere laborum laudantium molestias
+            nemo omnis pariatur perspiciatis quas quibusdam sequi suscipit tempore vero voluptas voluptatum.
+            Ab ad asperiores blanditiis exercitationem ipsa ipsum, maiores minus nulla officiis optio quia,
+            quibusdam quis temporibus, vero voluptas. Aut?
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aut, autem commodi, earum, esse
+            eveniet explicabo facilis harum inventore minima modi nemo voluptates? Ab blanditiis culpa deleniti,
+            dolore dolorem eligendi et fugiat illo illum in, ipsam ipsum laboriosam laborum natus nesciunt nobis
+            numquam porro praesentium quaerat quas quis quisquam rerum soluta, sunt veritatis. Ea fugit, molestiae?
+            Ab adipisci, aliquam aperiam atque commodi consectetur deserunt facere laborum laudantium molestias
+            nemo omnis pariatur perspiciatis quas quibusdam sequi suscipit tempore vero voluptas voluptatum.
+            Ab ad asperiores blanditiis exercitationem ipsa ipsum, maiores minus nulla officiis optio quia,
+            quibusdam quis temporibus, vero voluptas. Aut?
+        </p
+    </div>
+</section>
+
+{% endblock %}

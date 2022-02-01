@@ -1,10 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base/main_base.njk' %}
 
-</body>
-</html>
+{% set crumbs = [
+    { href: '', caption: 'Опыт клиентов' }
+] %}
+
+{% set videos = [
+    { id: 1, url: 'https://www.youtube.com/embed/tLcnJEMnlTs' },
+    { id: 2, url: 'https://www.youtube.com/embed/tLcnJEMnlTs' },
+    { id: 3, url: 'https://www.youtube.com/embed/tLcnJEMnlTs' }
+] %}
+
+{% block title %} Компания БХТ | Опыт клиентов {% endblock %}
+
+{% block content %}
+
+{% from 'macro/breadcrumb_macro.njk' import breadcrumb %}
+{% from 'macro/client_card.njk' import client_card %}
+{% from 'macro/video_modal.njk' import video_modal %}
+
+{{ breadcrumb(crumbs) }}
+
+{{ video_modal('video_modal') }}
+
+<section class="p-4" style="background: #55aefc">
+    <div class="container">
+        <h2 class="mb-4">Наши клиенты</h2>
+        <div class="row g-4">
+        {% for video in videos %}
+            {{ client_card(video.id, video.url) }}
+        {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        OpenVideoModal('video_modal', 'data-bs-video-url');
+    });
+</script>
+{% endblock %}
+

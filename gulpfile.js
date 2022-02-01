@@ -17,7 +17,7 @@ const TEMPLATE_PATHS = [
     '!./src/templates/macro/**/*'
 ];
 
-const STYLE_PATHS = ['./src/styles/**/*.scss'];
+const STYLE_PATHS = ['./src/styles/**/*.scss', './src/styles/**/*.css'];
 
 
 // tasks

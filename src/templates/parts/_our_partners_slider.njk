@@ -1,0 +1,58 @@
+{% from "../macro/partner_card.njk" import partner_card %}
+
+{% set partnersList = [
+    { name: 'Сбербанк', image: 'sberbank.jpg' },
+    { name: 'AptekaRu', image: 'aptekaru.png' },
+    { name: 'Ariston', image: 'ariston.png' },
+    { name: 'Биокад', image: 'biocad.png' },
+    { name: 'Чипита', image: 'chipita.jpg' },
+    { name: 'Фауретика', image: 'faurecia.png' },
+    { name: 'Хартман', image: 'hartman.png' },
+    { name: 'Хейнц', image: 'heinz.png' },
+    { name: 'Хундай', image: 'hundai.jpg' },
+    { name: 'Major', image: 'major.jpg' },
+    { name: 'Русский стандарт', image: 'russian_standart.png' },
+    { name: 'Солофарм', image: 'solopharm.png' },
+    { name: 'Спортсмастер', image: 'sportsmaster.png' },
+    { name: 'SuperWave', image: 'superwave.png' },
+    { name: 'Торговый дом', image: 'trade_house.jpg' }
+] %}
+
+<section class="partners-slider p-3">
+    <div class="container p-4 p-lg-0 pt-lg-4">
+        <h3 class="text-center mb-4">Наши партнеры</h3>
+
+        <div class="row g-4">
+        {% for partner in partnersList %}
+            <div class="col-md-6 col-lg-3">
+                {{ partner_card(partner.image, partner.name) }}
+            </div>
+        {% endfor %}
+        </div>
+
+         {#<div id="partnerSlider" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for _partner in partnersList %}
+                <div class="carousel-item active">
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-3">
+                            {{ partners.partner_card(_partner.image, _partner.name) }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <button class="carousel-control-prev" type="button" data-bs-target="#partnerSlider"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#partnerSlider"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+         </div>#}
+    </div>
+</section>
+

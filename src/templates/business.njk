@@ -1,0 +1,29 @@
+{% extends 'base/main_base.njk' %}
+
+{% block title %} Компания БХТ {% endblock %}
+
+{% block content %}
+<!-- Showcase -->
+<section class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start showcase">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <div>
+                <h1> Проффесиональный <span class="text-warning"> клининг </span></h1>
+                <p class="lead my-4">
+                    Мы уделяем большое внимание качеству и срокам выполнения работ.
+                    С нами Вы будете уверены в качественном результате.
+                </p>
+                <button class="btn btn-primary btn-lg"
+                        data-bs-toggle="modal"
+                        data-bs-target="#enroll">
+                    Пригласить на тендер
+                </button>
+            </div>
+            <img class="img-fluid d-none d-sm-block showcase__image" src="images/showcase.png" alt="" />
+        </div>
+    </div>
+</section>
+
+{% include 'parts/_invite_to_tender.njk' %}
+
+{% endblock %}
