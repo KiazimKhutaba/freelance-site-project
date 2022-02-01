@@ -1,0 +1,64 @@
+{% extends 'base/main_base.njk' %}
+
+{% set crumbs = [
+    { href: 'news.html', caption: 'Последние новости' }
+] %}
+
+{% set last_news = [
+    {
+        id: 1,
+        title: 'Открытие нового офиса в Калуге',
+        text: 'Мы рады сообщить Вам, что в связи с ростом обращений в Калуге открылся новый офис.
+                Связаться с новым офисом и получить консультацию можно по телефону или оставив заявку на сайте
+                +7 928 000-00-00
+                sales@bht.ru',
+        image: 'fundamentals.svg',
+        published_at: '12.01.2022 12:01'
+    },
+    {
+        id: 2,
+        title: 'Аутсорсинг и аутстаффинг: выбираем оптимальные решения для бизнеса',
+        text: 'Текст для сообщения 1',
+        image: 'fundamentals.svg',
+        published_at: '12.01.2022 12:01'
+    },
+    {
+        id: 3,
+        title: 'Заголовок 1',
+        text: 'Текст для сообщения 1',
+        image: 'react.svg',
+        published_at: '12.01.2022 12:01'
+    },
+    {
+        id: 4,
+        title: 'Заголовок 1',
+        text: 'Текст для сообщения 1',
+        image: 'showcase.png',
+        published_at: '12.01.2022 12:01'
+    }
+] %}
+
+{% block title %} Компания БХТ | Последние новости {% endblock %}
+
+{% block content %}
+
+    {% from 'macro/breadcrumb_macro.njk' import breadcrumb %}
+    {% from 'macro/news_card.njk' import news_card %}
+
+    {{ breadcrumb(crumbs) }}
+
+    <section class="p-4" style="line-height: 1.8rem">
+        <div class="container">
+            <h2 class="mb-4">Последние новости</h2>
+
+            <div class="row g-4">
+                {% for post in last_news %}
+                <div class="col-md-6">
+                    {{ news_card(post.id, post.title, post.text,  post.image, post.published_at) }}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
