@@ -5,9 +5,10 @@
 ] %}
 
 {% set videos = [
-    { id: 1, url: 'https://www.youtube.com/embed/tLcnJEMnlTs' },
-    { id: 2, url: 'https://www.youtube.com/embed/tLcnJEMnlTs' },
-    { id: 3, url: 'https://www.youtube.com/embed/tLcnJEMnlTs' }
+    { id: 1, title: 'Сбербанк (Интервью)', url: 'https://www.youtube.com/embed/tLcnJEMnlTs' },
+    { id: 2, title: 'Хартман', url: 'https://www.youtube.com/embed/lYgu75EwuPo' },
+    { id: 3, title: 'Магнит', url: 'https://www.youtube.com/embed/RyMgs0DXZrY' },
+    { id: 4, title: 'Лента', url: 'https://www.youtube.com/embed/RyMgs0DXZrY' }
 ] %}
 
 {% block title %} Компания БХТ | Опыт клиентов {% endblock %}
@@ -20,14 +21,14 @@
 
 {{ breadcrumb(crumbs) }}
 
-{{ video_modal('video_modal') }}
+{{ video_modal('video_modal', '') }}
 
 <section class="p-4" style="background: #55aefc">
     <div class="container">
         <h2 class="mb-4">Наши клиенты</h2>
         <div class="row g-4">
         {% for video in videos %}
-            {{ client_card(video.id, video.url) }}
+            {{ client_card(video.id, video.title, video.url) }}
         {% endfor %}
         </div>
     </div>

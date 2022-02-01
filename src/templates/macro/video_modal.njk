@@ -1,4 +1,4 @@
-{% macro video_modal(id) %}
+{% macro video_modal(id, url) %}
 <!-- Modal {{ id }} -->
 <div class="modal fade"
      id="{{ id }}"
@@ -13,7 +13,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>#}
             <div class="modal-body p-0">
-                <iframe width="100%" height="450" src="https://www.youtube.com/embed/tLcnJEMnlTs" title="YouTube video player"
+                <iframe width="100%" height="450" src="{{ url }}" class="d-block" title="интервью с клиентами"
                         frameborder="0" {#allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"#}
                         allowfullscreen>
                 </iframe>
