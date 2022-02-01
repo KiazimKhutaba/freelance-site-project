@@ -79,7 +79,7 @@ const devServer = () => {
     liveServer.start({
         host: '0.0.0.0',
         port: 3030,
-        wait: 500,
+        wait: 800,
         root: 'dist'
     });
 

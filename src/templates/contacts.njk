@@ -1,7 +1,64 @@
 {% extends "base/main_base.njk" %}
 
-{% block title %}Contacts page{% endblock %}
+{% set crumbs = [
+    { href: '', caption: 'Контакты' }
+] %}
 
-{% block page_content %}
-    Contacts page
+
+{% block title %} Компания БХТ | Контакты {% endblock %}
+
+
+{% block styles %}
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
+{% endblock %}
+
+
+{% block content %}
+
+{% from 'macro/breadcrumb_macro.njk' import breadcrumb %}
+
+{{ breadcrumb(crumbs) }}
+
+<!-- Contact & Map -->
+<section class="p-5 pt-3">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-7">
+                <h2 class="mb-4">Контакты</h2>
+                <ul class="list-group list-group-flush lead">
+                    <li class="list-group-item px-0">
+                        <span class="fw-bold">Офис:</span> 196084, Россия, Москва, Лиговский пр., д. 266, литер Е
+                    </li>
+                    <li class="list-group-item px-0">
+                        <span class="fw-bold">Телефон:</span> <a class="" href="tel:8 (812) 603-43-33">
+                            8 (812) 603-43-33 &nbsp;(многоканальный)
+                        </a>
+                    </li>
+                    <li class="list-group-item px-0">
+                        <span class="fw-bold">Почта:</span> info@bht.ru
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-5">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
+{% block scripts %}
+
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYnRyYXZlcnN5IiwiYSI6ImNrbmh0dXF1NzBtbnMyb3MzcTBpaG10eXcifQ.h5ZyYCglnMdOLAGGiL1Auw'
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-71.060982, 42.35725],
+        zoom: 18,
+    })
+</script>
 {% endblock %}
