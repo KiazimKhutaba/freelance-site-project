@@ -42,23 +42,23 @@
 
 {% block content %}
 
-    {% from 'macro/breadcrumb_macro.njk' import breadcrumb %}
-    {% from 'macro/news_card.njk' import news_card %}
+{% from 'macro/breadcrumb_macro.njk' import breadcrumb %}
+{% from 'macro/news_card.njk' import news_card %}
 
-    {{ breadcrumb(crumbs) }}
+{{ breadcrumb(crumbs) }}
 
-    <section class="p-4" style="line-height: 1.8rem">
-        <div class="container">
-            <h2 class="mb-4">Последние новости</h2>
+<section class="p-4" style="line-height: 1.8rem;background: #d8e8fa">
+    <div class="container">
+        <h2 class="mb-4">Последние новости</h2>
 
-            <div class="row g-4">
-                {% for post in last_news %}
-                <div class="col-md-6">
-                    {{ news_card(post.id, post.title, post.text,  post.image, post.published_at) }}
-                </div>
-                {% endfor %}
+        <div class="row g-4">
+            {% for post in last_news %}
+            <div class="col-md-6">
+                {{ news_card(post.id, post.title, post.text,  post.image, post.published_at) }}
             </div>
+            {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
 
 {% endblock %}

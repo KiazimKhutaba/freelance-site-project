@@ -1,4 +1,4 @@
-const { src, dest, watch } = require('gulp');
+const { src, dest, watch, parallel } = require('gulp');
 const rename = require('gulp-rename');
 const nunjucks = require('gulp-nunjucks');
 const prettifyHtml = require('gulp-pretty-html');
@@ -9,26 +9,41 @@ const removeEmptyLines = require('gulp-remove-empty-lines');
 const autoprefixer = require('gulp-autoprefixer');
 
 
-// config
-const TEMPLATE_PATHS = [
-    './src/templates/**/*.njk',
-    '!./src/templates/base/**/*',
-    '!./src/templates/parts/**/*',
-    '!./src/templates/macro/**/*'
-];
+const config = {
 
-const STYLE_PATHS = ['./src/styles/**/*.scss', './src/styles/**/*.css'];
-
+    paths: {
+        templates: [
+            './src/templates/**/*.njk',
+            '!./src/templates/base/**/*',
+            '!./src/templates/parts/**/*',
+            '!./src/templates/macro/**/*'
+        ],
+        styles: [
+            './src/styles/**/*.scss',
+            './src/styles/**/*.css'
+        ],
+        scripts: [
+            './src/scripts/**/*.js'
+        ],
+        images: [
+            './src/images/**/*.{gif,jpg,png,svg}'
+        ],
+        icons: [
+            './src/icons/*'
+        ],
+        watch: 'src/**/*'
+    }
+}
 
 // tasks
-const template = () => {
+const compileTemplates = () => {
 
     const errorHandler = function (err) {
         console.error(err.toString());
         this.emit('end');
     }
 
-    src(TEMPLATE_PATHS)
+    src(config.paths.templates)
         .pipe(nunjucks.compile())
         .on('error', errorHandler)
         .pipe(rename({ extname: '.html' }))
@@ -39,7 +54,7 @@ const template = () => {
 
 
 const styles = () => (
-    src(STYLE_PATHS)
+    src(config.paths.styles)
         .pipe(sass().on('error', sass.logError))
         //.pipe(autoprefixer(['last 2 versions']))
         .pipe(dest('./dist/styles'))
@@ -47,19 +62,19 @@ const styles = () => (
 
 
 const scripts = () => (
-    src('./src/scripts/**/*.js')
+    src(config.paths.scripts)
         .pipe(dest('./dist/js'))
 );
 
 
 const copyImages = () => (
-    src(['./src/images/**/*.{gif,jpg,png,svg}'])
+    src(config.paths.images)
         .pipe(dest('dist/images'))
 );
 
-const copyIcons = () => {
-    src(['./src/icons/*']).pipe(dest('dist'))
-}
+const copyIcons = () => (
+    src(config.paths.icons).pipe(dest('dist'))
+);
 
 
 const clean = () => del(['dist/*'])
@@ -68,10 +83,12 @@ const clean = () => del(['dist/*'])
 const allTasks = () => (
     copyIcons(),
     copyImages(),
-    template(),
+    compileTemplates(),
     styles(),
     scripts()
 )
+
+const allTasksParallel = parallel(copyIcons, copyImages, compileTemplates, styles, scripts);
 
 
 const devServer = () => {
@@ -83,23 +100,25 @@ const devServer = () => {
         root: 'dist'
     });
 
-    allTasks();
+    allTasksParallel();
     
-    watch('src/**/*').on('all', (path, file) => {
-        console.log('Rebuild running...');
+    watch(config.paths.watch).on('all', (path, file) => {
+        //console.time('Build');
 
-        allTasks();
+        allTasksParallel();
 
-        console.log('Rebuild completed.');
+        //console.timeEnd('Build');
     })
 }
 
-exports.default = allTasks;
+
+// exports.default = allTasks;
+exports.default = allTasksParallel;
 
 
 exports.copyImages = copyImages;
 exports.devServer = devServer;
-exports.build = template;
+exports.build = compileTemplates;
 exports.sass  = styles;
 exports.js = scripts;
 exports.clean = clean;

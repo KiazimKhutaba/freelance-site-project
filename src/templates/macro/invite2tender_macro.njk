@@ -1,0 +1,33 @@
+{% macro invite2tender(modal_id) %}
+<!-- Tender modal -->
+<div class="modal fade"
+     id="{{ modal_id }}"
+     tabindex="-1"
+     aria-labelledby="invite2tenderLabel"
+     aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="invite2tenderLabel">Приглашение на тендер</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="lead">Оставьте, пожалуйста, ссылку на тендер в поле ниже</p>
+                <form>
+                    <div class="mb-3">
+                        <label for="url2tender" class="col-form-label">
+                            Ссылка на тендер:
+                        </label>
+                        <input type="text" class="form-control" id="url2tender"/>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                {#<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>#}
+                <button type="button" class="btn btn-primary">Отправить</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endmacro %}

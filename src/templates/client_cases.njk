@@ -1,34 +1,43 @@
 {% extends 'base/main_base.njk' %}
 
+{% from 'macro/breadcrumb_macro.njk' import breadcrumb %}
+{% from 'macro/client_card.njk' import client_card %}
+{% from 'macro/client_text_interview.njk' import client_text_interview %}
+{% from 'macro/video_modal.njk' import video_modal %}
+
+
 {% set crumbs = [
     { href: '', caption: 'Опыт клиентов' }
 ] %}
 
-{% set videos = [
-    { id: 1, title: 'Сбербанк (Интервью)', url: 'https://www.youtube.com/embed/tLcnJEMnlTs' },
-    { id: 2, title: 'Хартман', url: 'https://www.youtube.com/embed/lYgu75EwuPo' },
-    { id: 3, title: 'Магнит', url: 'https://www.youtube.com/embed/RyMgs0DXZrY' },
-    { id: 4, title: 'Лента', url: 'https://www.youtube.com/embed/RyMgs0DXZrY' }
+{% set interviews = [
+    { id: 1, title: 'Сбербанк (Интервью)', url: 'https://www.youtube.com/embed/tLcnJEMnlTs', type: 'video' },
+    { id: 2, title: 'Хартман', url: 'interview.html', type: 'text' },
+    { id: 3, title: 'Магнит', url: 'interview.html', type: 'text' },
+    { id: 4, title: 'Лента', url: 'interview.html', type: 'text' }
 ] %}
+
 
 {% block title %} Компания БХТ | Опыт клиентов {% endblock %}
 
 {% block content %}
 
-{% from 'macro/breadcrumb_macro.njk' import breadcrumb %}
-{% from 'macro/client_card.njk' import client_card %}
-{% from 'macro/video_modal.njk' import video_modal %}
-
 {{ breadcrumb(crumbs) }}
 
 {{ video_modal('video_modal', '') }}
 
-<section class="p-4" style="background: #55aefc">
+<section class="p-4 pb-5" style="background: #d8e8fa">
     <div class="container">
         <h2 class="mb-4">Наши клиенты</h2>
         <div class="row g-4">
-        {% for video in videos %}
-            {{ client_card(video.id, video.title, video.url) }}
+        {% for interview in interviews %}
+            <div class="col-md-6 col-lg-3">
+            {% if(interview.type == 'video') %}
+                {{ client_card(interview.id, interview.title, interview.url) }}
+            {% else %}
+                {{ client_text_interview(interview.id, interview.title, interview.url) }}
+            {% endif %}
+            </div>
         {% endfor %}
         </div>
     </div>

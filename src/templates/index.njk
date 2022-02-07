@@ -2,33 +2,37 @@
 
 {% block content %}
 
-<header class="header">
+<header class="header p-md-2">
     <img src="images/site_logo.svg" class="header__logo" alt="Профессиональный аутсорсинг персонал" />
-    <h1 class="page__title">Профессиональный аутсорсинг персонала</h1>
+    <h1 class="page__title d-none d-md-block">Профессиональный аутсорсинг персонала</h1>
 </header>
 
-<main class="boxes">
+<main class="boxes row g-4">
 
-    <div class="box box--left">
-        <h2 class="box__title box__title--right">Нужна достойная работа?</h2>
-        <div class="clr"></div>
-        <ul class="who-is__list-box">
-            <li class="who-is__list">
-                <i class="line-text__line mr"></i> Михаил Румянцев
-            </li>
-        </ul>
-        <div class="clr"></div>
-        <a href="#" class="button-link" title="СМОТРЕТЬ ВАКАНСИИ">СМОТРЕТЬ ВАКАНСИИ</a>
+    <div class="col">
+        <div class="box box--left">
+            <h2 class="box__title box__title--right">Нужна достойная работа?</h2>
+            <div class="clr"></div>
+            <ul class="who-is__list-box">
+                <li class="who-is__list">
+                    <i class="line-text__line mr"></i> Михаил Румянцев
+                </li>
+            </ul>
+            <div class="clr"></div>
+            <a href="jobtypes.html" class="button-link" title="СМОТРЕТЬ ВАКАНСИИ">СМОТРЕТЬ ВАКАНСИИ</a>
+        </div>
     </div>
 
-    <div class="box box--right">
-        <h2 class="box__title box__title--left">Требуется провести уборку?</h2>
-        <div class="clr"></div>
-        <ul class="who-is__list-box who-is__list-box--right">
-            <li class="who-is__list">Анастасия Федорова <i class="line-text__line mr"></i></li>
-        </ul>
-        <div class="clr"></div>
-        <a href="business.html" class="button-link button-link--find-employee" title="Клининговые услуги">КЛИНИНГОВЫЕ УСЛУГИ</a>
+    <div class="col">
+        <div class="box box--right">
+            <h2 class="box__title box__title--left">Требуется провести уборку?</h2>
+            <div class="clr"></div>
+            <ul class="who-is__list-box who-is__list-box--right">
+                <li class="who-is__list">Анастасия Федорова <i class="line-text__line mr"></i></li>
+            </ul>
+            <div class="clr"></div>
+            <a href="business.html" class="button-link button-link--find-employee" title="Клининговые услуги">КЛИНИНГОВЫЕ УСЛУГИ</a>
+        </div>
     </div>
 
 </main>

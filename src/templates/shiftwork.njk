@@ -1,0 +1,116 @@
+{% extends 'base/work_base.njk' %}
+
+{% block title %}
+    Группа кадровых компаний БХТ
+{% endblock %}
+
+{% from 'macro/invite2tender_macro.njk' import invite2tender %}
+
+{% block content %}
+
+{{ invite2tender("invite2tender") }}
+
+<section class="showcase-work">
+    <div class="container-xxl">
+        <div class="row ps-md-5 position-relative">
+
+            <div class="col col-md-7 py-5">
+                <div>
+                    <h1>Официальная работа <span class="fw-light">в Москве и Санкт-Петербурге</span></h1>
+                </div>
+                <div class="py-4">
+                    <h3>от прямого работодателя</h3>
+                </div>
+
+                <ul class="showcase-work__conditions">
+                    <li>
+                        <img src="../images/circle.png" alt="list item circle" />
+                        <span> <span class="fw-bold">Без</span> посредников</span>
+                    </li>
+                    <li>
+                        <img src="../images/circle.png" alt="list item circle" />
+                        <span> <span class="fw-bold">Трудоустроим</span> в течении одного дня</span>
+                    </li>
+                    <li>
+                        <img src="../images/circle.png" alt="list item circle" />
+                        <span><span class="fw-bold">Постоянная</span> работа или работа <span class="fw-bold">вахтой</span></span>
+                    </li>
+                </ul>
+
+                <div class="mt-5">
+                    <button class="btn btn-warning btn-lg"
+                            data-bs-toggle="modal"
+                            data-bs-target="#invite2tender">
+                        Подобрать вакансию
+                    </button>
+                </div>
+            </div>
+
+            <div class="col col-md-5 p-0 ">
+                <img class="img-fluid showcase-work__image d-none d-md-block" src="../images/work_man.png" alt="Work man" />
+
+                <div class="company-summary">
+                    <div class="info d-md-inline-flex justify-content-between">
+                        <div class="info__block">
+                            <div class="info__title">17+</div>
+                            <div class="info__subtitle">лет на рынке трудойстройства</div>
+                        </div>
+
+                        <div class="info__block">
+                            <div class="info__title">600+</div>
+                            <div class="info__subtitle">человек в месяц трудоустраиваем</div>
+                        </div>
+
+                        <div class="info__block">
+                            <div class="info__title">1350+</div>
+                            <div class="info__subtitle">предприяйтий партнеров по России</div>
+                        </div>
+
+                        <div class="info__block">
+                            <div class="info__title">5000+</div>
+                            <div class="info__subtitle">человек работают в БХТ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="vacancy-list">
+    <div class="container mt-5">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md-5">
+                <img src="../images/man3.png" alt="adviser man" class="img-fluid" />
+            </div>
+            <div class="col-md-7">
+                <h1>
+                    <span class="fw-bolder">Найдем вам</span>
+                    <span class="fw-light">постоянную работу или работу вахтовым методом</span>
+                </h1>
+                <span class="fw-normal">Компания БХТ предлагает работу на крупных
+                российских и иностранных производствах</span>
+            </div>
+        </div>
+
+        {% from 'macro/_flip_card.njk' import flip_card %}
+
+        <div class="row mt-5 align-items-center justify-content-between">
+            <div class="col-md-6">
+                {{ flip_card('man_1.png') }}
+            </div>
+            <div class="col-md-6">
+                {{ flip_card('woman_1.png') }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="job-guarantees">
+    <div class="container">
+        Гарантии
+    </div>
+</section>
+{% endblock %}

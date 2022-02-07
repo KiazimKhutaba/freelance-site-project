@@ -1,8 +1,10 @@
-$mainBackgroundColor: #788bac;
+$mainBackgroundColor: #d2d8e2;
 // $mainBackgroundColor: #f2f6fc;
 $primaryBorderRadius: 16px;
 $secondaryBorderRadius: 8px;
 $debugBorder: 1px solid rgb(214, 27, 27);
+$colorPrimary: #238ca4;
+$colorDanger: #eb720a;
 
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap");
 
@@ -30,11 +32,10 @@ body {
   background: $mainBackgroundColor;
   text-align: center;
   display: flex;
-  position: relative;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 108px;
+  //height: 108px;
   margin-bottom: 44px;
   border-radius: $primaryBorderRadius;
 
@@ -76,7 +77,6 @@ body {
 
 .box {
   border-radius: $primaryBorderRadius;
-  width: 635px;
   min-height: 618px;
   position: relative;
   background-repeat: no-repeat;
@@ -86,12 +86,26 @@ body {
   &--left {
     //margin-right: 20px;
     background-image: url(../images/misha.png);
-    background-position: -120% bottom;
+    background-position: -100px bottom;
   }
 
   &--right {
     background-image: url(../images/nastya.png);
-    background-position: 210% bottom;
+    background-position: 190px bottom;
+  }
+
+  &__work-menu {
+    &--left {
+      background-image: url(../images/man2.png);
+      background-position: -90px bottom;
+      background-size: contain;
+    }
+
+    &--right {
+      background-image: url(../images/woman2.png);
+      background-position: 305px bottom;
+      background-size: contain;
+    }
   }
 
   @media (max-width: 768px) {
@@ -106,8 +120,8 @@ body {
   font-size: 42px;
   line-height: 57px;
   text-align: right;
-  width: 70%;
-  margin: 60px 60px 32px;
+  //width: 70%;
+  padding: 60px 60px 32px;
 
   &--left {
     text-align: left;
@@ -145,7 +159,7 @@ body {
 }
 
 .button-link {
-  background: #326295;
+  background: #eb720a;
   color: #fff;
   text-decoration: none;
   display: block;
@@ -166,11 +180,17 @@ body {
   border-radius: 4px;
 
   &--find-employee {
-    background: #DC2C2A;
+    background: #238ca4;
   }
 
   &:hover {
     color: #fff;
+  }
+
+  @media (max-width: 569px) {
+    font-size: 18px;
+    line-height: 20px;
+    padding: 30px 35px;
   }
 }
 
@@ -192,35 +212,39 @@ body {
     margin-right: 1rem;
   }
 
-  .box--left &::after {
+  .box--left & {
+    background-color: $colorDanger;
+  }
+
+  .box--right & {
+    background-color: $colorPrimary;
+  }
+
+  &::after {
     content: '';
     position: absolute;
-    left: -0.5rem;
-    top: 50%;
-    -webkit-transform: translate(50%, -50%);
     transform: translate(50%, -50%);
     width: 12px;
     height: 12px;
     border-radius: 100%;
-    background-color: #326295;
-    -ms-flex-negative: 0;
+    background-color: $colorDanger;
     flex-shrink: 0;
+  }
+
+  .box--left &::after {
+    left: -0.5rem;
+    top: 50%;
+    border-radius: 100%;
+    background-color: $colorDanger;
   }
 
   .box--right &::after {
-    content: '';
-    position: absolute;
     left: 90%;
     top: 50%;
-    -webkit-transform: translate(50%,-50%);
-    transform: translate(50%,-50%);
-    width: 12px;
-    height: 12px;
-    border-radius: 100%;
-    background-color: #d9272d;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
+    background-color: $colorPrimary;
   }
 
-
+  @media (max-width: 576px) {
+    display: none;
+  }
 }

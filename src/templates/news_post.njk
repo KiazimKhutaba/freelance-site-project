@@ -1,0 +1,42 @@
+{% extends 'base/main_base.njk' %}
+
+{% set crumbs = [
+    { href: 'news.html', caption: 'Новости' },
+    { href: 'news_post.html', caption: 'Заголовок новости' }
+] %}
+
+{% block title %} Компания БХТ | Заголовок новости {% endblock %}
+
+{% block content %}
+
+    {% from 'macro/breadcrumb_macro.njk' import breadcrumb %}
+
+    {{ breadcrumb(crumbs) }}
+
+    <section class="p-4" style="line-height: 1.8rem;background: #d8e8fa">
+        <div class="container">
+            <h2 class="mb-4">Заголовок новости</h2>
+            <h4>Открытие нового представительства</h4>
+            <img src="../images/news_open_1.jpg" alt="image" class="img-fluid rounded-3 my-4" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aut, autem commodi, earum, esse
+                eveniet explicabo facilis harum inventore minima modi nemo voluptates? Ab blanditiis culpa deleniti,
+                dolore dolorem eligendi et fugiat illo illum in, ipsam ipsum laboriosam laborum natus nesciunt nobis
+                numquam porro praesentium quaerat quas quis quisquam rerum soluta, sunt veritatis. Ea fugit, molestiae?
+                Ab adipisci, aliquam aperiam atque commodi consectetur deserunt facere laborum laudantium molestias
+                nemo omnis pariatur perspiciatis quas quibusdam sequi suscipit tempore vero voluptas voluptatum.
+                Ab ad asperiores blanditiis exercitationem ipsa ipsum, maiores minus nulla officiis optio quia,
+                quibusdam quis temporibus, vero voluptas. Aut?
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aut, autem commodi, earum, esse
+                eveniet explicabo facilis harum inventore minima modi nemo voluptates? Ab blanditiis culpa deleniti,
+                dolore dolorem eligendi et fugiat illo illum in, ipsam ipsum laboriosam laborum natus nesciunt nobis
+                numquam porro praesentium quaerat quas quis quisquam rerum soluta, sunt veritatis. Ea fugit, molestiae?
+                Ab adipisci, aliquam aperiam atque commodi consectetur deserunt facere laborum laudantium molestias
+                nemo omnis pariatur perspiciatis quas quibusdam sequi suscipit tempore vero voluptas voluptatum.
+                Ab ad asperiores blanditiis exercitationem ipsa ipsum, maiores minus nulla officiis optio quia,
+                quibusdam quis temporibus, vero voluptas. Aut?
+            </p>
+        </div>
+    </section>
+
+{% endblock %}

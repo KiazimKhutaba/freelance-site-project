@@ -1,0 +1,12 @@
+{% macro client_text_interview(id, title, url) %}
+<div class="card bg-light">
+    <div class="card-body text-center">
+        <img src="https://randomuser.me/api/portraits/men/{{ id }}.jpg"
+             class="rounded-circle mb-3"
+             alt="{{ title }}"
+        />
+        <h5 class="card-title mb-3">{{ title }}</h5>
+        <a href="{{ url }}" class="btn btn-outline-primary">Прочитать</a>
+    </div>
+</div>
+{% endmacro %}

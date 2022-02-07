@@ -1,5 +1,5 @@
 {% macro news_card(id, title, text, image, published_at) %}
-<div class="card mb-3 h-100" {#style="max-width: 540px;"#}>
+<div class="card mb-3 h-100 d-flex justify-content-between" {#style="max-width: 540px;"#}>
     <div class="row g-0">
         <div class="col-md-4">
             <img src="../../images/{{ image }}" class="h-100 w-100" alt="...">
@@ -11,6 +11,9 @@
                 <p class="card-text"><small class="text-muted">{{ published_at }}</small></p>
             </div>
         </div>
+    </div>
+    <div class="card-footer">
+        <a href="news_post.html" class="btn btn-outline-primary float-end">Подробнее</a>
     </div>
 </div>
 {% endmacro %}
