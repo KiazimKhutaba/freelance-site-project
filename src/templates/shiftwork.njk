@@ -1,14 +1,17 @@
 {% extends 'base/work_base.njk' %}
 
+{% from 'macro/_flip_card.njk' import flip_card %}
+{% from 'macro/applicant_contacts_modal.njk' import applicant_contacts_modal %}
+
+
 {% block title %}
     Группа кадровых компаний БХТ
 {% endblock %}
 
-{% from 'macro/invite2tender_macro.njk' import invite2tender %}
 
 {% block content %}
 
-{{ invite2tender("invite2tender") }}
+{{ applicant_contacts_modal("applicant_contacts") }}
 
 <section class="showcase-work">
     <div class="container-xxl">
@@ -40,7 +43,7 @@
                 <div class="mt-5">
                     <button class="btn btn-warning btn-lg"
                             data-bs-toggle="modal"
-                            data-bs-target="#invite2tender">
+                            data-bs-target="#applicant_contacts">
                         Подобрать вакансию
                     </button>
                 </div>
@@ -77,8 +80,6 @@
     </div>
 </section>
 
-
-
 <section class="vacancy-list">
     <div class="container mt-5">
         <div class="row align-items-center justify-content-between">
@@ -95,14 +96,56 @@
             </div>
         </div>
 
-        {% from 'macro/_flip_card.njk' import flip_card %}
-
-        <div class="row mt-5 align-items-center justify-content-between">
-            <div class="col-md-6">
-                {{ flip_card('man_1.png') }}
+        <div class="row mt-3 g-4">
+            <div class="col-md-6 work-card-col">
+                <div class="work-card">
+                    <div class="work-card__inner">
+                        <div class="work-card__front">
+                            <div class="front__text">
+                                <div class="front__text-title">Работа <br />вахтой</div>
+                                <div class="front__text-subtitle">Наши вакансии</div>
+                            </div>
+                            <div class="front__image">
+                                <img src="../images/man_1.png" alt="man 1"  class="img-fluid" />
+                            </div>
+                            <div class="front__hint">
+                                Наведите, чтобы увидеть перечень вакансий
+                            </div>
+                        </div>
+                        <div class="work-card__background">
+                            This is background
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-                {{ flip_card('woman_1.png') }}
+            <div class="col-md-6 work-card-col">
+                <div class="work-card">
+                    <div class="work-card__inner">
+                        <div class="work-card__front">
+                            <div class="front__text">
+                                <div class="front__text-title">Постоянная <br />занятость</div>
+                                <div class="front__text-subtitle">Рабочие  вакансии</div>
+                            </div>
+                            <div class="front__image">
+                                <img src="../images/woman_1.png" alt="woman 1"  class="img-fluid front__image--right" />
+                            </div>
+                            <div class="front__hint">
+                                Наведите, чтобы увидеть перечень вакансий
+                            </div>
+                        </div>
+                        <div class="work-card__background">
+                            This is background
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col text-center">
+                <a href="#" class="btn btn-lg btn-primary py-3 px-4" style="font-size: 1rem; letter-spacing: .05rem">
+                    Смотреть все вакансии
+                </a>
             </div>
         </div>
     </div>

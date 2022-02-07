@@ -1,0 +1,103 @@
+.work-card-col {
+
+}
+
+.work-card {
+  $minHeight: 400px;
+
+  background-color: transparent;
+  padding: 10px;
+  min-height: $minHeight;
+  margin: 0 auto;
+  background-image: url(../images/card_bg_2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 16px;
+  cursor: pointer;
+  perspective: 1000px;
+
+
+  &__inner {
+    position: relative;
+    height: $minHeight;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+
+  &__front,
+  &__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    //-webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+
+  &__background {
+    background-color: #0b5ed7;
+    transform: rotateY(180deg);
+  }
+
+  /*&:hover &__front {
+    transform: rotateY(180deg);
+  }*/
+
+  &:hover &__inner {
+    transform: rotateY(180deg);
+  }
+
+}
+
+
+
+.front {
+
+  &__text {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+
+    &-title {
+      font-size: 2rem;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    &-subtitle {
+      font-weight: lighter;
+      font-size: 1.125rem;
+      padding-top: 8px;
+    }
+  }
+
+
+  &__image {
+    position: absolute;
+    max-width: 18rem;
+    right: 0;
+    bottom: 0;
+
+    &--right {
+      max-width: 16rem;
+    }
+  }
+
+  &__hint {
+    position: absolute;
+    font-size: .85rem;
+    max-width: 100px;
+    left: 50px;
+    bottom: 50px;
+    color: gray;
+
+    &::before {
+      content: '';
+      background-image: url(../images/mouse_pointer.png);
+      background-size: 32px;
+      background-repeat: no-repeat;
+    }
+  }
+}
