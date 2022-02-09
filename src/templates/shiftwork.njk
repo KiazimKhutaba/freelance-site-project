@@ -1,8 +1,7 @@
 {% extends 'base/work_base.njk' %}
 
-{% from 'macro/_flip_card.njk' import flip_card %}
 {% from 'macro/applicant_contacts_modal.njk' import applicant_contacts_modal %}
-
+{% from 'macro/invite2tender_macro.njk' import invite2tender %}
 
 {% block title %}
     Группа кадровых компаний БХТ
@@ -12,6 +11,7 @@
 {% block content %}
 
 {{ applicant_contacts_modal("applicant_contacts") }}
+{{ invite2tender("invite2tender") }}
 
 <section class="showcase-work">
     <div class="container-xxl">
@@ -32,11 +32,11 @@
                     </li>
                     <li>
                         <img src="../images/circle.png" alt="list item circle" />
-                        <span> <span class="fw-bold">Трудоустроим</span> в течении одного дня</span>
+                        <span> <span class="fw-bold">Трудоустроим</span> в течении <br/>одного дня</span>
                     </li>
                     <li>
                         <img src="../images/circle.png" alt="list item circle" />
-                        <span><span class="fw-bold">Постоянная</span> работа или работа <span class="fw-bold">вахтой</span></span>
+                        <span><span class="fw-bold">Постоянная</span> работа <br/>или работа <span class="fw-bold">вахтой</span></span>
                     </li>
                 </ul>
 
@@ -81,7 +81,7 @@
 </section>
 
 <section class="vacancy-list">
-    <div class="container mt-5">
+    <div class="container mt-3">
         <div class="row align-items-center justify-content-between">
             <div class="col-md-5">
                 <img src="../images/man3.png" alt="adviser man" class="img-fluid" />
@@ -113,7 +113,18 @@
                             </div>
                         </div>
                         <div class="work-card__background">
-                            This is background
+                            <ul class="vacancies-list">
+                                <li><a href="#">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -134,7 +145,18 @@
                             </div>
                         </div>
                         <div class="work-card__background">
-                            This is background
+                            <ul class="vacancies-list">
+                                <li><a href="#">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                                <li><a href="#" class="">Разнорабочий<br>г. Кировск</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -143,7 +165,7 @@
 
         <div class="row mt-5">
             <div class="col text-center">
-                <a href="#" class="btn btn-lg btn-primary py-3 px-4" style="font-size: 1rem; letter-spacing: .05rem">
+                <a href="#" class="btn btn-lg btn-primary my-btn">
                     Смотреть все вакансии
                 </a>
             </div>
@@ -152,8 +174,85 @@
 </section>
 
 <section class="job-guarantees">
-    <div class="container">
-        Гарантии
+    <div class="container p-5">
+
+        <div class="row align-items-center justify-content-between mt-5">
+            <div class="col-md-5">
+                <img src="../images/man4.png" alt="adviser man" class="img-fluid" />
+            </div>
+            <div class="col-md-7">
+                <h1 class="">
+                    <span class="fw-bold">Гарантируем комфортные условия проживания и труда,</span>
+                    <span class="fw-lighter">а также своевременную заработную плату</span>
+                </h1>
+            </div>
+        </div>
+
+        <div class="row align-items-center justify-content-between mt-5">
+            <div class="col-md-3">
+                <div class="condition-item">
+                    <img src="../images/icon_write.png" class="img-fluid" alt="condition item" />
+                    <div class="condition-item__text">Заключение трудового <b>договора</b></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="condition-item">
+                    <img src="../images/icon_db.png" class="img-fluid" alt="condition item" />
+                    <div class="condition-item__text">Зарплата <b>от 60000 руб до 150000</b> за вахту</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="condition-item">
+                    <img src="../images/icon_time.png" class="img-fluid" alt="condition item" />
+                    <div class="condition-item__text">Заработанная плата <b>строго по графику</b></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="condition-item">
+                    <img src="../images/icon_time.png" class="img-fluid" alt="condition item" />
+                    <div class="condition-item__text"><b>Еженедельные</b> выплаты</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="condition-item">
+                    <img src="../images/icon_filter.png" class="img-fluid" alt="condition item" />
+                    <div class="condition-item__text"><b>Срок вахты на выбор</b> 45, 60, 90</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="condition-item">
+                    <img src="../images/icon_calendar.png" class="img-fluid" alt="condition item" />
+                    <div class="condition-item__text"><b>График работ</b> 5/2 и 6/1</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="condition-item">
+                    <img src="../images/icon_question.png" class="img-fluid" alt="condition item" />
+                    <div class="condition-item__text"><b>Помощь менеджера 24/7</b></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="condition-item">
+                    <img src="../images/icon_education.png" class="img-fluid" alt="condition item" />
+                    <div class="condition-item__text"><b>Возможность</b> обучения</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5 flex-row">
+            <h4>Нужны объяснения или консультация?</h4>
+            <div>
+                <h5 class="d-inline-block fw-lighter me-2">
+                    Звоните сейчас <span class="fw-bold">8 (812) 000-00-00</span> или оставьте Ваши данные и мы перевозним Вам
+                </h5>
+                <a href="#"
+                   class="btn btn-lg btn-primary my-btn"
+                   data-bs-toggle="modal"
+                   data-bs-target="#applicant_contacts">Оставить контакты
+                </a>
+            </div>
+        </div>
+
     </div>
 </section>
 {% endblock %}
