@@ -1,0 +1,22 @@
+{% extends 'base/work_base.njk' %}
+
+
+{% from 'macro/breadcrumb_macro.njk' import breadcrumb %}
+{% from 'macro/applicant_contacts_modal.njk' import applicant_contacts_modal %}
+
+{% block title %} Компания БХТ | Не найдено {% endblock %}
+
+
+{% block content %}
+
+    {{ breadcrumb(crumbs) }}
+    {{ applicant_contacts_modal("applicant_contacts") }}
+
+    <section class="p-4" style="line-height: 1.8rem">
+        <div class="container">
+            <h2 class="mb-4">Запрашиваемая страница не найдена</h2>
+            <p>Не найдена</p>
+        </div>
+    </section>
+
+{% endblock %}

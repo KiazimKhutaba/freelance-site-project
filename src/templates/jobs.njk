@@ -1,0 +1,84 @@
+{% extends 'base/work_base.njk' %}
+
+{% from 'macro/breadcrumb_macro.njk' import breadcrumb %}
+
+
+{% set crumbs = [
+    { href: '', caption: 'Вакансии' }
+] %}
+
+
+{% set jobs = [
+    { id: 1, title: 'Разнорабочий на производство', region: 'Ленинградская область, г. Кировск', conditions: ['от 84 000 руб./ 45 смен', 'от 112 000 руб. / 60 смен'] },
+    { id: 2, title: 'Грузчик', region: 'Санкт-Петербург', conditions: ['от 50 000 руб./в месяц'] },
+    { id: 3, title: 'Подсобный рабочий', region: 'Санкт-Петербург', conditions: ['от 86 000 руб./45 смен', 'от 115 000 руб./60 смен'] },
+    { id: 4, title: 'Разнорабочий на стройку', region: 'Санкт-Петербург', conditions: ['от 65 000 руб./в месяц'] },
+    { id: 5, title: 'Оператор производственной линии', region: 'Санкт-Петербург', conditions: ['от 44 000 руб./в месяц'] },
+    { id: 6, title: 'Сборщик овощей', region: 'Санкт-Петербург', conditions: ['от 38 000 руб. до 60 000 руб./в месяц'] },
+    { id: 7, title: 'Руководитель отдела персонала', region: 'Санкт-Петербург', conditions: ['от 100 000 руб./в месяц'] },
+    { id: 8, title: 'Сотрудник службы безопасности', region: 'Санкт-Петербург', conditions: ['от 50 000 руб./в месяц'] },
+    { id: 9, title: 'Упаковщик', region: 'Ломоносовский район, пос. Пеники', conditions: ['от 72 000 руб./45 смен', 'от 96 000 руб./60 смен', 'от 144 000 руб./90 смен'] },
+    { id: 10, title: 'Упаковщик', region: 'Ломоносовский район, пос. Пеники', conditions: ['от 72 000 руб./45 смен', 'от 96 000 руб./60 смен', 'от 144 000 руб./90 смен'] },
+    { id: 11, title: 'Упаковщик', region: 'Ломоносовский район, пос. Пеники', conditions: ['от 72 000 руб./45 смен', 'от 96 000 руб./60 смен', 'от 144 000 руб./90 смен'] },
+    { id: 12, title: 'Упаковщик', region: 'Ломоносовский район, пос. Пеники', conditions: ['от 72 000 руб./45 смен', 'от 96 000 руб./60 смен', 'от 144 000 руб./90 смен'] }
+] %}
+
+
+{% block title %}
+    Вакансии | Группа кадровых компаний БХТ
+{% endblock %}
+
+{% block content %}
+
+{{ breadcrumb(crumbs) }}
+
+<section>
+    <div class="container pt-1 pb-3">
+        <div class="row mb-3">
+            <h1>Вакансии</h1>
+        </div>
+        <div class="row text-center mb-5">
+            <div class="fs-1 lh-1 mb-3">
+                <b>Найдем вам</b>  <span class="fw-lighter">постоянную работу <br/>
+               или работу вахтовым методом</span>
+            </div>
+            <div class="fs-4 fw-lighter">
+                Компания БХТ предлагает Вам работу на крупных <br/>
+                российских и иностранных производствах
+            </div>
+        </div>
+        <div class="row g-4">
+        {% for job in jobs %}
+            <div class="col-sm-6 col-md-4">
+                <div class="card h-100 justify-content-between p-4 rounded-3 job-card ">
+                    <div class="job-card__title">{{ job.title }}</div>
+                    <div class="job-card__region">{{ job.region }}</div>
+                    <ul class="job-card__conditions">
+                    {% for condition in job.conditions %}
+                        <li>{{ condition }}</li>
+                    {% endfor %}
+                    </ul>
+                    <a href="job.html" class="btn btn-outline-primary">Подробнее</a>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+
+</section>
+
+    {#<div class="col-md-4">
+        <div class="card h-100 job-card p-4 rounded-3">
+            <div class="job-card__title">{{ job.title }}</div>
+            <div class="job-card__region"{{ job.region }}</div>
+            <ul class="job-card__conditions">
+                {% for condition in job.conditions %}
+                    <li>{{ condition }}</li>
+                {% endfor %}
+            </ul>
+            <div><a href="job/{{ job.id }}" class="btn btn-outline-primary">Подробнее</a></div>
+        </div>
+    </div>#}
+
+{% endblock %}
+

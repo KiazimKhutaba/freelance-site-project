@@ -1,0 +1,53 @@
+{% extends 'base/work_base.njk' %}
+
+
+{% from 'macro/breadcrumb_macro.njk' import breadcrumb %}
+{% from 'macro/applicant_contacts_modal.njk' import applicant_contacts_modal %}
+
+
+{% set crumbs = [
+    { href: 'jobs.html', caption: 'Вакансии' },
+    { href: '', caption: 'Рабочий' }
+] %}
+
+{% block title %} Компания БХТ | Вакансия {% endblock %}
+
+
+{% block content %}
+
+{{ breadcrumb(crumbs) }}
+{{ applicant_contacts_modal("applicant_contacts") }}
+
+<section class="pb-5" style="line-height: 1.8rem">
+    <div class="container">
+        <h2 class="mb-4">Вакансия: Рабочий</h2>
+        <div class="my-4">
+            <button class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#applicant_contacts">
+                Откликнуться на вакансию
+            </button>
+        </div>
+        <h4>Описание вакансии</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aut, autem commodi, earum, esse
+            eveniet explicabo facilis harum inventore minima modi nemo voluptates? Ab blanditiis culpa deleniti,
+            dolore dolorem eligendi et fugiat illo illum in, ipsam ipsum laboriosam laborum natus nesciunt nobis
+            numquam porro praesentium quaerat quas quis quisquam rerum soluta, sunt veritatis. Ea fugit, molestiae?
+            Ab adipisci, aliquam aperiam atque commodi consectetur deserunt facere laborum laudantium molestias
+            nemo omnis pariatur perspiciatis quas quibusdam sequi suscipit tempore vero voluptas voluptatum.
+            Ab ad asperiores blanditiis exercitationem ipsa ipsum, maiores minus nulla officiis optio quia,
+            quibusdam quis temporibus, vero voluptas. Aut?
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aut, autem commodi, earum, esse
+            eveniet explicabo facilis harum inventore minima modi nemo voluptates? Ab blanditiis culpa deleniti,
+            dolore dolorem eligendi et fugiat illo illum in, ipsam ipsum laboriosam laborum natus nesciunt nobis
+            numquam porro praesentium quaerat quas quis quisquam rerum soluta, sunt veritatis. Ea fugit, molestiae?
+            Ab adipisci, aliquam aperiam atque commodi consectetur deserunt facere laborum laudantium molestias
+            nemo omnis pariatur perspiciatis quas quibusdam sequi suscipit tempore vero voluptas voluptatum.
+            Ab ad asperiores blanditiis exercitationem ipsa ipsum, maiores minus nulla officiis optio quia,
+            quibusdam quis temporibus, vero voluptas. Aut?
+        </p>
+    </div>
+</section>
+
+{% endblock %}

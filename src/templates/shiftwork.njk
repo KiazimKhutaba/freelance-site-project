@@ -1,7 +1,7 @@
 {% extends 'base/work_base.njk' %}
 
 {% from 'macro/applicant_contacts_modal.njk' import applicant_contacts_modal %}
-{% from 'macro/invite2tender_macro.njk' import invite2tender %}
+{#{% from 'macro/invite2tender_macro.njk' import invite2tender %}#}
 
 {% block title %}
     Группа кадровых компаний БХТ
@@ -11,7 +11,6 @@
 {% block content %}
 
 {{ applicant_contacts_modal("applicant_contacts") }}
-{{ invite2tender("invite2tender") }}
 
 <section class="showcase-work">
     <div class="container-xxl">
@@ -51,7 +50,11 @@
 
             <div class="col col-md-5 p-0 ">
                 <img class="img-fluid showcase-work__image d-none d-md-block" src="../images/work_man.png" alt="Work man" />
-
+            </div>
+        </div>
+        <div class="row position-relative">
+            <div class="col-md-4"></div>
+            <div class="col-md-8 px-0">
                 <div class="company-summary">
                     <div class="info d-md-inline-flex justify-content-between">
                         <div class="info__block">
@@ -165,7 +168,7 @@
 
         <div class="row mt-5">
             <div class="col text-center">
-                <a href="#" class="btn btn-lg btn-primary my-btn">
+                <a href="jobs.html" class="btn btn-lg btn-primary my-btn">
                     Смотреть все вакансии
                 </a>
             </div>

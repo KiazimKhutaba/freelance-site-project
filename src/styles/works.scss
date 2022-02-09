@@ -4,7 +4,13 @@ $font: 'Roboto';
 
 @import url("https://fonts.googleapis.com/css2?family=#{$font}:wght@300;400;500;700&display=swap");
 
+html {
+  height: 100%;
+  position: relative;
+}
+
 body {
+  height: 100%;
   font-family: $font, sans-serif;
   //font-size: 16px !important;
 }
@@ -83,7 +89,11 @@ body::before {
   //float: right;
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -1px;
+
+  @media (max-width: 992px) {
+    position: static;
+  }
 
   .info {
 
@@ -131,6 +141,7 @@ body::before {
 .phone {
   width: 15px;
   color: #6c6c6c !important;
+  font-weight: lighter;
 
   &:hover {
     text-decoration: none;
@@ -186,6 +197,11 @@ body::before {
   padding: 2rem 1rem;
   background: #2c3034;
   color: white;
+  //position: absolute;
+  //bottom: 0;
+  //left: 0;
+  //right: 0;
+  //top: 99%;
 
   &__top {
 
@@ -224,6 +240,33 @@ body::before {
       color: #9a9a9a;
       font-size: .9rem;
     }
+  }
+
+  &__address {
+    margin-top: 30px;
+  }
+}
+
+.job-card {
+  background-image: url(../images/job_card_bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__title {
+    font-size: 1.3rem;
+    line-height: 1.12;
+    font-weight: bolder;
+  }
+
+  &__region {
+    font-size: .8rem;
+    margin-top: 10px;
+  }
+
+  &__conditions {
+    font-size: .8rem;
+    margin-top: 10px;
   }
 }
 
