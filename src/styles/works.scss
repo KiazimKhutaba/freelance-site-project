@@ -25,6 +25,17 @@ body::before {
   }*/
 }
 
+.btn-invite2tender {
+  background-color: #47B1AC;
+  border-color: #47B1AC;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #ffffff;
+    color: #47B1AC;
+  }
+}
+
 .showcase-work {
   //margin-top: 24px;
   position: relative;
