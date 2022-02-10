@@ -257,11 +257,13 @@ body::before {
     font-size: 1.3rem;
     line-height: 1.12;
     font-weight: bolder;
+    margin-bottom: .5rem;
   }
 
   &__region {
     font-size: .8rem;
     margin-top: 10px;
+    margin-bottom: .5rem;
   }
 
   &__conditions {
