@@ -3,3 +3,62 @@
   background: rgb(216,232,250);
   background: linear-gradient(160deg, rgba(216,232,250,1) 0%, rgba(238,242,255,1) 100%);
 }
+
+.bht-bg-primary {
+  background-color: #47B1AC;
+}
+
+
+.footer {
+  padding: 2rem 1rem;
+  background: #2c3034;
+  color: white;
+  //position: absolute;
+  //bottom: 0;
+  //left: 0;
+  //right: 0;
+  //top: 99%;
+
+  &__top {
+
+  }
+
+  &__logo-text {
+    margin-left: 5px;
+  }
+
+  &__bottom {
+    padding-top: 10px;
+    border-top: 1px solid #8e8e8e;
+    font-size: .8rem;
+  }
+
+  &__icon {
+    width: 2.8rem;
+    //height: 2.6rem;
+    padding: 0.7rem;
+    background-color: #fff;
+    margin-right: 0.5rem;
+    border-radius: 100%;
+    transition: all .3s
+  }
+
+  .social-items {
+
+  }
+
+  &__menu-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    .menu-list__item > a {
+      color: #9a9a9a;
+      font-size: .9rem;
+    }
+  }
+
+  &__address {
+    margin-top: 30px;
+  }
+}

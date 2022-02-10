@@ -1,5 +1,7 @@
 {% extends 'base/main_base.njk' %}
 
+{% from 'macro/breadcrumb_macro.njk' import breadcrumb %}
+
 {% set crumbs = [
     { href: 'news.html', caption: 'Новости' },
     { href: 'news_post.html', caption: 'Заголовок новости' }
@@ -9,11 +11,9 @@
 
 {% block content %}
 
-    {% from 'macro/breadcrumb_macro.njk' import breadcrumb %}
-
     {{ breadcrumb(crumbs) }}
 
-    <section class="p-4" style="line-height: 1.8rem;background: #d8e8fa">
+    <section class="p-4" style="line-height: 1.8rem">
         <div class="container">
             <h2 class="mb-4">Заголовок новости</h2>
             <h4>Открытие нового представительства</h4>

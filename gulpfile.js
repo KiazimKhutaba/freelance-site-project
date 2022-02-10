@@ -101,9 +101,9 @@ const allTasksParallel = parallel(copyIcons, copyImages, compileTemplates, style
 const devServer = () => {
 
     liveServer.start({
-        host: '0.0.0.0',
-        port: 3030,
-        wait: 800,
+        host: '127.0.0.1',
+        port: 8080,
+        wait: 300,
         root: 'dist'
     });
 

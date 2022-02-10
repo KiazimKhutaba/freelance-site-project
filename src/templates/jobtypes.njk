@@ -1,42 +1,129 @@
-{% extends "base/_base.njk" %}
+{% extends 'base/_base2.njk' %}
 
 {% block content %}
 
-    <header class="header p-md-2">
-        <img src="images/site_logo.svg" class="header__logo" alt="Профессиональный аутсорсинг персонал" />
-        <h1 class="page__title d-none d-md-block">Профессиональный аутсорсинг персонала</h1>
-    </header>
+    <style>
 
-    <main class="boxes row g-4">
+        .wrapper {
+            margin: 1rem 1.5rem;
+        }
 
-        <div class="col-md-6">
-            <div class="box box__work-menu--left">
-                <h2 class="box__title box__title--right" style="">Ищете работу <br />вахтовым методом?</h2>
-               {# <div class="clr"></div>
-                <ul class="who-is__list-box">
-                    <li class="who-is__list">
-                        <i class="line-text__line mr"></i> Михаил Румянцев
-                    </li>
-                </ul>#}
-                <div class="clr"></div>
-                <a href="shiftwork.html" class="button-link text-uppercase"  title="СМОТРЕТЬ ВАКАНСИИ">Вахтовая работа</a>
+        .header__container {
+            margin-bottom: 1rem;
+        }
+
+        .header {
+            background-color: #e5e5e5;
+            border-radius: 5px;
+        }
+
+        .header__logo {
+            width: 115px;
+            margin-right: 10px;
+        }
+
+        .header__title {
+            font-size: 1.2rem;
+            font-style: normal;
+            font-weight: 500;
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        .boxes {
+
+        }
+
+        .box {
+            position: relative;
+            min-height: 550px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            box-shadow: inset 0 0 0 2000px rgba(59, 59, 59, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #ffffff;
+            font-weight: bolder;
+        }
+
+        .box + .box {
+            /*margin-left: 10px;*/
+        }
+
+        .box__left {
+            border-top-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+            background-image: url(../images/outsourcing_bg_1.jpg);
+        }
+
+        .box__right {
+            border-top-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            background-image: url(../images/cleaning_bg_1.jpg);
+        }
+
+        .button {
+            position: absolute;
+            background-color: #47B1AC;
+            border: 1px solid #47B1AC;
+            padding: 10px 30px;
+            color: #ffffff;
+        }
+        .button:hover {
+            background-color: #259c97;
+            border: 1px solid #259c97;
+        }
+
+        .button--left {
+            bottom: 25px;
+            right: 25px;
+        }
+
+        .button--right {
+            bottom: 25px;
+            left: 25px;
+        }
+
+        .main {
+            /*padding-left: 1.5rem;
+            padding-right: 1.5rem;*/
+            /*display: flex;*/
+        }
+
+    </style>
+
+    <div class="wrapper">
+        <header class="header__container">
+            <div class="container-xxl d-flex align-items-center header">
+                <img src="images/site_logo.svg" class="header__logo" alt="Профессиональный аутсорсинг персонал" />
+                <h1 class="header__title d-none d-md-block">Профессиональный аутсорсинг персонала</h1>
             </div>
-        </div>
+        </header>
 
-        <div class="col-md-6">
-            <div class="box box__work-menu--right">
-                <h2 class="box__title box__title--left">Ищете постоянную работу?</h2>
-                {#<div class="clr"></div>
-                <ul class="who-is__list-box who-is__list-box--right">
-                    <li class="who-is__list">Анастасия Федорова <i class="line-text__line mr"></i></li>
-                </ul>
-                <div class="clr"></div>#}
-                <a href="business.html" class="button-link button-link--find-employee text-uppercase" title="Клининговые услуги">
-                    Полная занятость
-                </a>
+        <main class="main">
+            <div class="container-xxl p-0">
+                <div class="row justify-content-between">
+                    <div class="col-md-6">
+                        <div class="box box__left text-center">
+                            Ищете работу <br />вахтовым методом?
+                            <a href="shiftwork.html" class="btn btn-primary button button--left">Перейти</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="box box__right text-center">
+                            Ищете постоянную <br/>работу?
+                            <a href="shiftwork.html" class="btn btn-primary button button--right">Перейти</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </main>
+    </div>
 
-    </main>
 
 {% endblock %}
+
+
