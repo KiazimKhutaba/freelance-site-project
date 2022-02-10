@@ -7,6 +7,7 @@ const liveServer = require('live-server');
 const sass = require('gulp-sass')(require('sass'));
 const removeEmptyLines = require('gulp-remove-empty-lines');
 const autoprefixer = require('gulp-autoprefixer');
+const changed = require('gulp-changed');
 
 
 const config = {
@@ -44,6 +45,7 @@ const compileTemplates = () => {
     }
 
     src(config.paths.templates)
+        .pipe(changed('dist', {extension: '.html'}))
         .pipe(nunjucks.compile())
         .on('error', errorHandler)
         .pipe(rename({ extname: '.html' }))
@@ -55,6 +57,7 @@ const compileTemplates = () => {
 
 const styles = () => (
     src(config.paths.styles)
+        .pipe(changed('dist/styles', {extension: '.css'}))
         .pipe(sass().on('error', sass.logError))
         //.pipe(autoprefixer(['last 2 versions']))
         .pipe(dest('./dist/styles'))
@@ -63,17 +66,21 @@ const styles = () => (
 
 const scripts = () => (
     src(config.paths.scripts)
+        .pipe(changed('dist/js'))
         .pipe(dest('./dist/js'))
 );
 
 
 const copyImages = () => (
     src(config.paths.images)
+        .pipe(changed('dist/images'))
         .pipe(dest('dist/images'))
 );
 
 const copyIcons = () => (
-    src(config.paths.icons).pipe(dest('dist'))
+    src(config.paths.icons)
+        .pipe(changed('dist'))
+        .pipe(dest('dist'))
 );
 
 
