@@ -67,19 +67,5 @@
     </div>
 
 </section>
-
-    {#<div class="col-md-4">
-        <div class="card h-100 job-card p-4 rounded-3">
-            <div class="job-card__title">{{ job.title }}</div>
-            <div class="job-card__region"{{ job.region }}</div>
-            <ul class="job-card__conditions">
-                {% for condition in job.conditions %}
-                    <li>{{ condition }}</li>
-                {% endfor %}
-            </ul>
-            <div><a href="job/{{ job.id }}" class="btn btn-outline-primary">Подробнее</a></div>
-        </div>
-    </div>#}
-
 {% endblock %}
 
