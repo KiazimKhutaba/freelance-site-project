@@ -1,3 +1,5 @@
+{% from '../macro/invite2tender_macro.njk' import invite2tender %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +26,10 @@
 
 {% include '../parts/_work_navbar.njk' %}
 
-{% block content %} Нет контента {% endblock %}
+<main class="main-content">
+    {{ invite2tender("invite2tender") }}
+    {% block content %} Нет контента {% endblock %}
+</main>
 
 {#{% include 'parts/_our_partners_slider.njk' %}#}
 

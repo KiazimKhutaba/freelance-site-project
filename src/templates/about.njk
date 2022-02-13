@@ -1,14 +1,15 @@
 {% extends 'base/main_base.njk' %}
 
+{% from 'macro/breadcrumb_macro.njk' import breadcrumb %}
+
 {% set crumbs = [
+    { href: '/shiftwork.html', caption: 'Главная' },
     { href: 'about.html', caption: 'О нас' }
 ] %}
 
 {% block title %} Компания БХТ | О компании {% endblock %}
 
 {% block content %}
-
-{% from 'macro/breadcrumb_macro.njk' import breadcrumb %}
 
 {{ breadcrumb(crumbs) }}
 

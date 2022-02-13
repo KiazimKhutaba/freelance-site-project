@@ -45,7 +45,7 @@ const compileTemplates = () => {
     }
 
     src(config.paths.templates)
-        .pipe(changed('dist', {extension: '.html'}))
+        //.pipe(changed('dist', {extension: '.html'}))
         .pipe(nunjucks.compile())
         .on('error', errorHandler)
         .pipe(rename({ extname: '.html' }))
@@ -57,7 +57,7 @@ const compileTemplates = () => {
 
 const styles = () => (
     src(config.paths.styles)
-        .pipe(changed('dist/styles', {extension: '.css'}))
+        //.pipe(changed('dist/styles', {extension: '.css'}))
         .pipe(sass().on('error', sass.logError))
         //.pipe(autoprefixer(['last 2 versions']))
         .pipe(dest('./dist/styles'))
@@ -66,7 +66,7 @@ const styles = () => (
 
 const scripts = () => (
     src(config.paths.scripts)
-        .pipe(changed('dist/js'))
+        //.pipe(changed('dist/js'))
         .pipe(dest('./dist/js'))
 );
 

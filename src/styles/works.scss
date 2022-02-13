@@ -1,4 +1,3 @@
-@use 'work_card';
 @use "common";
 
 $font: 'Roboto';
@@ -14,16 +13,42 @@ body {
   height: 100%;
   font-family: $font, sans-serif;
   //font-size: 16px !important;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding-top: 68px;
 }
 
-body::before {
+.main-content {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex: 0 0 auto;
+  margin-top: 2rem;
+}
+
+.position-xl-relative {
+  @media (min-width: 1200px) {
+    position: relative;
+  }
+}
+
+/*body::before2 {
   display: block;
   content: '';
   height: 68px;
 
-  /*@media (max-width: 576px) {
+  !*@media (max-width: 576px) {
     height: 104px;
-  }*/
+  }*!
+}*/
+
+.center-on-sm {
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 
 .btn-invite2tender {
@@ -64,8 +89,18 @@ body::before {
     list-style-type: none;
     font-size: .95em;
 
+    @media (max-width: 992px) {
+      display: inline-block;
+      text-align: center;
+    }
+
     li + li {
       margin-left: 25px;
+
+      @media (max-width: 992px) {
+        margin-left: 0;
+        margin-top: 10px;
+      }
     }
 
     li {
@@ -108,12 +143,19 @@ body::before {
   }
 
 
-  .info {
-
+  .info_blocks {
+    //display: flex;
+    //flex-wrap: wrap;
   }
 
   .info__block {
     width: 20%;
+
+    @media (max-width: 556px) {
+      text-align: center;
+      width: 50%;
+      margin-bottom: 10px;
+    }
   }
 
   .info__title {
@@ -126,7 +168,6 @@ body::before {
     font-size: .85em;
   }
 }
-
 
 .header {
 
@@ -142,6 +183,10 @@ body::before {
       &:hover {
         text-decoration: underline;
       }
+    }
+
+    .navbar-toggler {
+      border: none !important;
     }
   }
 
@@ -229,6 +274,183 @@ body::before {
   &__conditions {
     font-size: .8rem;
     margin-top: 10px;
+  }
+}
+
+
+/**
+  Open works card
+ */
+.work-card-col {
+
+}
+
+.work-card {
+  $minHeight: 400px;
+  $debug: false;
+
+  background-color: transparent;
+  min-height: $minHeight;
+  margin: 0 auto;
+  cursor: pointer;
+  perspective: 1000px;
+
+
+  &__inner {
+    position: relative;
+    min-height: $minHeight;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+
+  &__front,
+  &__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    //-webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  &__front {
+    background-image: url(../images/card_bg_1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .front__text {
+    background-image: none;
+  }
+
+  &__background {
+    padding: 5px 30px;
+    //background-color: #0b5ed7;
+    background-image: url(../images/card_bg_2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    transform: rotateY(180deg);
+
+
+    .vacancies-list {
+      list-style-type: none;
+      width: $minHeight;
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-wrap: wrap;
+
+      @media (max-width: 992px) {
+        border: 1px solid red;
+        font-size: .8rem;
+      }
+
+      li {
+        width: 50%;
+        //text-align: left;
+        padding-left: 1rem;
+        position: relative;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      li a {
+        color: #fff;
+      }
+
+      li a:hover {
+        color: #debc0f;
+      }
+
+      li::before {
+        content: '';
+        position: absolute;
+        left: -0.5rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 100%;
+        background-color: #e3bf0d;
+        top: 1.5rem;
+      }
+    }
+  }
+
+  // debug
+  @if $debug {
+    &__inner {
+      transform: rotateY(-180deg);
+    }
+  }
+  @else {
+    &:hover &__inner {
+      transform: rotateY(-180deg);
+    }
+  }
+
+}
+
+
+
+.front {
+
+  &__text {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+
+    &-title {
+      font-size: 2rem;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    &-subtitle {
+      font-weight: lighter;
+      font-size: 1.125rem;
+      padding-top: 8px;
+    }
+  }
+
+
+  &__image {
+    position: absolute;
+    max-width: 18rem;
+    right: 0;
+    bottom: 0;
+
+    &--right {
+      max-width: 16rem;
+    }
+
+    @media (max-width: 992px) {
+      max-width: 12rem;
+
+      &--right {
+        max-width: 10rem;
+      }
+    }
+  }
+
+  &__hint {
+    position: absolute;
+    font-size: .85rem;
+    max-width: 100px;
+    left: 50px;
+    bottom: 50px;
+    color: gray;
+
+    &::before {
+      content: '';
+      background-image: url(../images/mouse_pointer.png);
+      background-size: 32px;
+      background-repeat: no-repeat;
+    }
   }
 }
 
