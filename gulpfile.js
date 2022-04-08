@@ -44,11 +44,11 @@ const compileTemplates = () => {
         this.emit('end');
     }
 
-    src(config.paths.templates)
+    return src(config.paths.templates)
         //.pipe(changed('dist', {extension: '.html'}))
         .pipe(nunjucks.compile())
         .on('error', errorHandler)
-        .pipe(rename({ extname: '.html' }))
+        .pipe(rename({extname: '.html'}))
         .pipe(prettifyHtml())
         .pipe(removeEmptyLines())
         .pipe(dest('dist'))
@@ -101,7 +101,7 @@ const allTasksParallel = parallel(copyIcons, copyImages, compileTemplates, style
 const devServer = () => {
 
     liveServer.start({
-        host: '127.0.0.1',
+        host: '0.0.0.0',
         port: 8080,
         wait: 300,
         root: 'dist'
@@ -128,4 +128,4 @@ exports.devServer = devServer;
 exports.build = compileTemplates;
 exports.sass  = styles;
 exports.js = scripts;
-exports.clean = clean;
+//exports.clean = clean;

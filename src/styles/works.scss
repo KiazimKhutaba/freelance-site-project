@@ -274,6 +274,7 @@ body {
   &__conditions {
     font-size: .8rem;
     margin-top: 10px;
+    margin-bottom: 20px;
   }
 }
 
@@ -347,7 +348,7 @@ body {
       flex-wrap: wrap;
 
       @media (max-width: 992px) {
-        border: 1px solid red;
+        //border: 1px solid red;
         font-size: .8rem;
       }
 
