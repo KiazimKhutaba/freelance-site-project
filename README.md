@@ -32,5 +32,7 @@ npm run dev-server # run local server on port 5555
 
 ```
 
-**Note: in VS Code you should setup settings for Nunjucks templates, like for html templates** 
+Example:
+
+[https://bht2022.herokuapp.com/](https://bht2022.herokuapp.com/)
 
